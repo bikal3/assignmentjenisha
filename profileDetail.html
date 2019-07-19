@@ -38,6 +38,18 @@
 
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#profileimage')
+                            .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
 
 
 </head>
@@ -138,6 +150,9 @@
             <div class="contact-box mt-70">
                 <div class="row">
                     <div class="col-lg-4">
+                            <img src="assets/logo/jenisha.jpg" id="profileimage" alt="Profile image" class="img-fluid" >
+                            <input id="profileimageinputtype" type="file" onchange="readURL(this);"class="btn btn-primary"value="" />
+
                     </div>
                     <div class="col-lg-8">
                         <div class="contact-form">

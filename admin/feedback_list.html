@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 style="color: #fe7865; margin-top:10px;  margin-left: 20px;">Animal Care Center</h3>
+                    <h3 id="admintitle">Animal Care Center</h3>
                 </div>
 
             </div>
@@ -27,12 +27,13 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
             </div>
             <div id="navbar" class="collapse navbar-collapse">
@@ -69,7 +70,8 @@
                         <a href="index.html" class="list-group-item active main-color-bg">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Operation
                         </a>
-                        <a href="feedback_list.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> List </a>
+                        <a href="feedback_list.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                aria-hidden="true"></span> List </a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -105,7 +107,7 @@
                 </div>
     </section>
 
-  
+
     </div>
 
 
@@ -119,7 +121,7 @@
     <script type="text/javascript" src="js/token.js"></script>
     <script type="text/javascript" src="js/adminscript.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var data = { //Fetch form data
                 'token': localStorage.getItem("token"),
                 'id': localStorage.getItem("_id")
@@ -130,7 +132,7 @@
                 url: 'http://localhost:3000/api/admin/list_feedback',
                 data: data,
                 dataType: "json",
-                success: function(response) {
+                success: function (response) {
                     if (response.success == true) {
                         response.data.forEach((obj, i) => {
                             table_data += '<tr>' +
@@ -152,7 +154,7 @@
                     } else {
                         document.getElementById("table_data").innerHTML = response.message;
                     }
-                    $(".btn-danger").on('click', function() {
+                    $(".btn-danger").on('click', function () {
                         if (confirm('Are you sure to delete this record ?')) {
                             var delete_btn = $(this);
                             data._id = $(this).data("id");
@@ -161,11 +163,11 @@
                                 url: 'http://localhost:3000/api/admin/delete_feedback',
                                 data: data,
                                 dataType: "json",
-                                success: function(response) {
+                                success: function (response) {
                                     $("#check").html(response.Success).addClass("alert");
                                     delete_btn.closest("tr").remove();
                                 },
-                                error: function() {
+                                error: function () {
                                     document.getElementById("check").innerHTML = "No data Available";
                                 }
                             });
@@ -173,7 +175,7 @@
 
                     })
                 },
-                error: function() {
+                error: function () {
                     document.getElementById("table_data").innerHTML = "No data Available";
                 }
             });

@@ -128,7 +128,7 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 30px;
-  
+
     width: 100%;
 }
 
@@ -150,4 +150,10 @@ body {
 
 .down_footer {
     margin-bottom: 240px;
+}
+#admintitle{
+
+    color: #fe7865;
+     margin-top:10px; 
+      margin-left: 20px;
 }

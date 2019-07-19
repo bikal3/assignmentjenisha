@@ -2453,6 +2453,24 @@ html body .comments article .active {
     font: normal normal 400 normal 20px / 30px Poppins, sans-serif;
     outline: rgb(0, 123, 255) none 0px;
 }
+#profileimage{
+    margin-top: 30px;
+}
+#profileimageinputtype{
+    margin-top:10px;
+    margin-left:40px;
+    width: 280px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #fe7865;
+    border-color: #fe7865;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #fe7865;
+    border-color: #fe7865;
+}
 
 
 /*#logo:before*/
