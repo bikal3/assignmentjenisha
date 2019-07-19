@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="../assets/logo/web4.png" id="logo" alt="Logo" width="100%">
+                    <h3 style="color: #fe7865; margin-top:10px; margin-left: 20px; ">Animal Care Center</h3>
                 </div>
 
             </div>
@@ -27,10 +27,11 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-          
-          </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+
+                </button>
 
             </div>
             <div id="navbar" class="collapse navbar-collapse">
@@ -67,7 +68,8 @@
                         <a href="index.html" class="list-group-item active main-color-bg">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Operation
                         </a>
-                        <a href="feedback_list.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> List </a>
+                        <a href="feedback_list.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                aria-hidden="true"></span> List </a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -107,11 +109,7 @@
             </div>
         </div>
     </section>
-
-    <footer id="footer">
-        <p>Copyright Amrit Shrestha, &copy; 2019</p>
-    </footer>
-
+    s
 
     </div>
 
@@ -124,7 +122,7 @@
     <script type="text/javascript" src="js/token.js"></script>
     <script type="text/javascript" src="js/adminscript.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             var id = "";
             var searchParams = new URLSearchParams(window.location.search);
@@ -141,7 +139,7 @@
                 url: 'http://127.0.0.1:3000/api/admin/view_feedback',
                 data: data,
                 dataType: "json",
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                     $('#_id').html(response._id);
                     $('#name').html(response.name);
@@ -150,7 +148,7 @@
                     $('#message').html(response.message);
 
                 },
-                error: function() {}
+                error: function () { }
             })
         });
     </script>
