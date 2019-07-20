@@ -39,17 +39,17 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
     <script>
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $('#profileimage')
-                            .attr('src', e.target.result);
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#profileimage')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
             }
-        </script>
+        }
+    </script>
 
 
 </head>
@@ -77,11 +77,13 @@
                             <h3 style="color: #fe7865; margin-top:10px; ">Animal Care Center</h3>
                         </a>
                         <!-- Logo -->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="bar-icon"></span>
-                        <span class="bar-icon"></span>
-                        <span class="bar-icon"></span>
-                    </button>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                        </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
@@ -107,9 +109,10 @@
                                     <a data-scroll-nav="0" href="./forumPost.html">Post</a>
                                 </li>
                                 <li class="nav-item dropdown logged">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Setting
-                                </a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Setting
+                                    </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="./profileDetail.html">Profile</a>
                                         <a class="dropdown-item" id="logout" href="javascript:void(0);">Logout</a>
@@ -150,13 +153,15 @@
             <div class="contact-box mt-70">
                 <div class="row">
                     <div class="col-lg-4">
-                            <img src="assets/logo/jenisha.jpg" id="profileimage" alt="Profile image" class="img-fluid" >
-                            <input id="profileimageinputtype" type="file" onchange="readURL(this);"class="btn btn-primary"value="" />
+                        <img src="assets/logo/jenisha.jpg" id="profileimage" alt="Profile image" class="img-fluid">
+                        <input id="profileimageinputtype" type="file" onchange="readURL(this);" class="btn btn-primary"
+                            value="" />
 
                     </div>
                     <div class="col-lg-8">
                         <div class="contact-form">
-                            <form id="profileDetail" action="/normaluser/edit_profile" autocomplete="off" method="post" data-toggle="validator">
+                            <form id="profileDetail" action="/normaluser/edit_profile" autocomplete="off" method="post"
+                                data-toggle="validator">
                                 <div class="row">
                                     <div class="alert-info" id="check"></div>
                                     <div>
@@ -164,28 +169,33 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <input type="text" id="username" name="username" value="" placeholder="Enter Your Username" data-error="Username is required." required="required">
+                                            <input type="text" id="username" name="username" value=""
+                                                placeholder="Enter Your Username" data-error="Username is required."
+                                                required="required">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <!-- single form -->
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" value="" data-error="Name is required." required="required">
+                                            <input type="text" id="name" name="name" placeholder="Enter Your Full Name"
+                                                value="" data-error="Name is required." required="required">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <!-- single form -->
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <input type="email" id="email" name="email" value="" placeholder="Enter Your Email" required="required">
+                                            <input type="email" id="email" name="email" value=""
+                                                placeholder="Enter Your Email" required="required">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <!-- single form -->
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single-form form-group">
-                                            <input type="text" id="phone" name="phone" value="" placeholder="Enter Your Phone" required="required">
+                                            <input type="text" id="phone" name="phone" value=""
+                                                placeholder="Enter Your Phone" required="required">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <!-- single form -->
@@ -221,7 +231,7 @@
                     <div class="col-lg-3 col-md-5 col-sm-7">
                         <div class="footer-logo mt-40">
                             <a href="#">
-                                    <h4 style="color: #fe7865;">Animal Care Center</h4>
+                                <h4 style="color: #fe7865;">Animal Care Center</h4>
                             </a>
                             <p class="mt-10">For all your pet’s health needs.</p>
                             <ul class="footer-social mt-25">
@@ -336,21 +346,84 @@
     <script src="assets/js/myscript.js"></script>
     <script src="assets/js/nav.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+            let imageName = '';
             var data = 'username=' + localStorage.getItem("username") + '&_id=' + localStorage.getItem("_id") + '&token=' + localStorage.getItem("token");
             $.ajax({
                 type: 'POST',
                 url: 'http://127.0.0.1:3000/api/profile',
                 data: data,
                 dataType: "json",
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                     $('#username').val(response.username);
                     $('#name').val(response.name);
                     $('#email').val(response.email);
                     $('#phone').val(response.phone);
+                    $('#profileimage').attr('src', 'http://localhost:3000/' + response.image);
                 },
-                error: function() {}
+                error: function () { }
             })
+            //api for editing profile
+            $("#profileDetail").submit(function (event) {
+                event.preventDefault();
+                var _form = $(this);
+                
+                if (imageName == '') {
+                    var data = _form.serialize();
+                data += '&_id=' + localStorage.getItem("_id") + '&token=' + localStorage.getItem("token");
+                }
+                else{
+                    var data = _form.serialize();
+                    data += '&_id=' + localStorage.getItem("_id") + '&token=' + localStorage.getItem("token")
+                    +'&image='+ imageName;
+
+                }
+                console.log(data);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:3000/api/edtProfile',
+                    data: data,
+                    dataType: "json",
+                    beforeSend: function () {
+                        $(".main-btn").attr("disabled", true);
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        $("#check").html(response.Success).addClass("alert");
+                        if (response.Success == "Profile Updated Successfully!!") {
+                            localStorage.setItem("username", response.username);
+                        }
+                        $(".main-btn").attr("disabled", false);
+                    },
+                    error: function () { }
+                })
+            });
+
+            $("#profileimageinputtype").on('change', function () {
+                let formData = new FormData();
+                let files = $("#profileimageinputtype").get(0).files;
+                if (files.length > 0) {
+                    formData.append("imageName", files[0]);
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:3000/api/imageupload',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    data: formData,
+                    dataType: 'JSON',
+                    success: function (response) {
+                       
+                        imageName = response;
+                        alert(imageName);
+                    },
+                    error: function () {
+                        alert("Image upload failed!");
+                    }
+                });
+            });
+
         });
     </script>
